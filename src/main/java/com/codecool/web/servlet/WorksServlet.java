@@ -20,7 +20,7 @@ import java.util.List;
 public class WorksServlet extends AbstractServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         try (Connection connection = getConnection(req.getServletContext())) {
             WorkDao workDao = new DatabaseWorkDao(connection);
             WorkService workService = new SimpleWorkService(workDao);
