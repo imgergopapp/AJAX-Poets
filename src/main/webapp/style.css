@@ -9,3 +9,7 @@
 .hidden {
     display: none;
 }
+
+#work-content {
+    white-space: pre-line;
+  }
