@@ -28,7 +28,7 @@ public final class SimpleWorkService implements WorkService {
     }
 
     @Override
-    public int countRegexOccurances(String regex, int workId) throws SQLException {
+    public int countRegexOccurrences(String regex, int workId) throws SQLException {
 
         if (!isStringOnlyAlphabetical(regex)) {
             return -1;
