@@ -18,7 +18,7 @@ import java.sql.SQLException;
 public class WorkServlet extends AbstractServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         try (Connection connection = getConnection(req.getServletContext())) {
             WorkDao workDao = new DatabaseWorkDao(connection);
             WorkService workService = new SimpleWorkService(workDao);
@@ -33,7 +33,7 @@ public class WorkServlet extends AbstractServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         try (Connection connection = getConnection(req.getServletContext())) {
             WorkDao workDao = new DatabaseWorkDao(connection);
             WorkService workService = new SimpleWorkService(workDao);
