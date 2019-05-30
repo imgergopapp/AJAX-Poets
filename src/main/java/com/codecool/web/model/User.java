@@ -6,11 +6,17 @@ public final class User extends AbstractModel {
 
     private final String email;
     private final String password;
+    private final String name;
 
-    public User(int id, String email, String password) {
+    public User(int id, String email, String password, String name) {
         super(id);
         this.email = email;
         this.password = password;
+        this.name= name;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public String getEmail() {
@@ -28,11 +34,12 @@ public final class User extends AbstractModel {
         if (!super.equals(o)) return false;
         User user = (User) o;
         return Objects.equals(email, user.email) &&
-            Objects.equals(password, user.password);
+            Objects.equals(password, user.password) &&
+            Objects.equals(name, user.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), email, password);
+        return Objects.hash(super.hashCode(), email, password, name);
     }
 }
